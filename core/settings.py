@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "testdeployment1todoapp-env.eba-9smavjph.us-east-1.elasticbeanstalk.com",
+    "127.0.0.1",
 ]
 
 
@@ -79,22 +80,22 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'umdxaqvi',
-        'USER': 'umdxaqvi',
-        'PASSWORD': 'aECZpr2OcMaPSYIOvrt9jW1uCdOjgppv',
-        'HOST': 'chunee.db.elephantsql.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'umdxaqvi',
+#         'USER': 'umdxaqvi',
+#         'PASSWORD': 'aECZpr2OcMaPSYIOvrt9jW1uCdOjgppv',
+#         'HOST': 'chunee.db.elephantsql.com',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -140,11 +141,11 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # STATIC FILES
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = 'static'
 
-STATICFILES_DIRS = [
-    "static",
-]
+# STATICFILES_DIRS = [
+#     "static",
+# ]
 
 # Django REST settings
 REST_FRAMEWORK = {
