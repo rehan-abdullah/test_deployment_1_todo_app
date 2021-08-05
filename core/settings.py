@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m#8^&+m6y)8^+q@$0@d3gl-br5lkb-w1+94x(ex7x+w^gcdbk8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "testdeployment1todoapp-env.eba-9smavjph.us-east-1.elasticbeanstalk.com",
@@ -78,24 +78,24 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https: // docs.djangoproject.com/en/3.2/ref/settings/  # databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'umdxaqvi',
-        'USER': 'umdxaqvi',
-        'PASSWORD': 'aECZpr2OcMaPSYIOvrt9jW1uCdOjgppv',
-        'HOST': 'chunee.db.elephantsql.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'umdxaqvi',
+#         'USER': 'umdxaqvi',
+#         'PASSWORD': 'aECZpr2OcMaPSYIOvrt9jW1uCdOjgppv',
+#         'HOST': 'chunee.db.elephantsql.com',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -141,11 +141,11 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # STATIC FILES
-STATIC_ROOT = 'static'
+STATIC_ROOT = BASE_DIR / 'static'
 
-# STATICFILES_DIRS = [
-#     "static",
-# ]
+STATICFILES_DIRS = [
+    "staticfiles",
+]
 
 # Django REST settings
 REST_FRAMEWORK = {
