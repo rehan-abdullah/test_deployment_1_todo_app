@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m#8^&+m6y)8^+q@$0@d3gl-br5lkb-w1+94x(ex7x+w^gcdbk8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
+print(DEBUG)
 
 ALLOWED_HOSTS = [
     "testdeployment1todoapp-env.eba-9smavjph.us-east-1.elasticbeanstalk.com",
@@ -80,22 +83,24 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https: // docs.djangoproject.com/en/3.2/ref/settings/  # databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'umdxaqvi',
-        'USER': 'umdxaqvi',
-        'PASSWORD': 'aECZpr2OcMaPSYIOvrt9jW1uCdOjgppv',
-        'HOST': 'chunee.db.elephantsql.com',
-        'PORT': '5432',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'umdxaqvi',
+            'USER': 'umdxaqvi',
+            'PASSWORD': 'aECZpr2OcMaPSYIOvrt9jW1uCdOjgppv',
+            'HOST': 'chunee.db.elephantsql.com',
+            'PORT': '5432',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
