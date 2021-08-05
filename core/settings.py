@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-m#8^&+m6y)8^+q@$0@d3gl-br5lkb-w1+94x(ex7x+w^gcdbk8
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "http://testdeployment1todoapp-env.eba-9smavjph.us-east-1.elasticbeanstalk.com/",
+    "testdeployment1todoapp-env.eba-9smavjph.us-east-1.elasticbeanstalk.com",
 ]
 
 
