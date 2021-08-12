@@ -13,6 +13,7 @@ sqlparse = "==0.4.1"
 Django = "==3.2.4"
 psycopg2-binary = "*"
 python-decouple = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.9"

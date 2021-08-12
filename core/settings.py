@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-m#8^&+m6y)8^+q@$0@d3gl-br5lkb-w1+94x(ex7x+w^gcdbk8
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
-print(DEBUG)
+print(f'DEBUG = {DEBUG}')
 
 ALLOWED_HOSTS = [
     "testdeployment1todoapp-env.eba-9smavjph.us-east-1.elasticbeanstalk.com",
