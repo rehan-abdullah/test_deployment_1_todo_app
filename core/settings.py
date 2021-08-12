@@ -29,8 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 print(f'DEBUG = {DEBUG}')
 
 ALLOWED_HOSTS = [
-    "testdeployment1todoapp-env.eba-9smavjph.us-east-1.elasticbeanstalk.com",
-    "127.0.0.1",
+    "test-deployment-1-todo-app.herokuapp.com/",
 ]
 
 
