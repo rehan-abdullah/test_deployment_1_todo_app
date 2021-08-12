@@ -30,6 +30,8 @@ print(f'DEBUG = {DEBUG}')
 
 ALLOWED_HOSTS = [
     "test-deployment-1-todo-app.herokuapp.com/",
+    "localhost",
+    "127.0.0.1",
 ]
 
 
